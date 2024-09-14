@@ -1,9 +1,13 @@
 [tool.poetry]
-name = "recipes"
+name = "Recipe manager"
 version = "0.1.0"
 description = ""
 authors = ["Rem M. <morrig407@gmail.com>"]
 readme = "README.md"
+repository = "https://github.com/remortalite/recipe_manager"
+packages = [
+    { include = "recipe_manager" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
