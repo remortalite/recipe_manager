@@ -13,10 +13,14 @@ packages = [
 python = "^3.10"
 Django = "^5.1.1"
 python-dotenv = "^1.0.1"
+django-extensions = "^3.2.3"
+ipython = "^8.27.0"
+django-bootstrap5 = "^24.2"
 
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^7.1.1"
+django-extensions = "^3.2.3"
 
 [build-system]
 requires = ["poetry-core"]

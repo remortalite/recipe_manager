@@ -28,13 +28,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG") or False
+DEBUG = False
+if os.getenv("DEBUG") == 'true':
+    DEBUG = True
 
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
 ]
-
 
 # Application definition
 
@@ -45,9 +46,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap5',
     'recipe_manager.users',
     'recipe_manager.recipe_manager',
 ]
+
+if DEBUG:
+    INSTALLED_APPS += ('django_extensions',)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

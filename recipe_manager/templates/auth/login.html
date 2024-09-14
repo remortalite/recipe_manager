@@ -1,5 +1,7 @@
 {% extends 'layout/base.html' %}
 
+{% load django_bootstrap5 %}
+
 {% block title %}
     Recipe manager -- Login
 {% endblock %}
@@ -8,9 +10,10 @@
 
 <h1>Recipe manager: Login</h1>
 
-<form>
-    {{ form }}
-    <input type="submit" value="Log in">
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% bootstrap_button "Log in" %}
 </form>
 
 {% endblock content %}
