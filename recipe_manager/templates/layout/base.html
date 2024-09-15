@@ -9,26 +9,26 @@
     {% bootstrap_javascript %}
 </head>
 <body>
-
-<ul>
-    <li><a href="{% url 'home' %}">Main</a></li>
-    {% if not user.is_authenticated %}
-        <li><a href="{% url 'login' %}">Login</a></li>
-        <li><a href="{% url 'users.create' %}">Sign up</a></li>
-    {% else %}
-        <li>
-            <form method="post" action="{% url 'logout' %}">
-                {% csrf_token %}
-                <input type="submit" value="Logout">
-            </form>
-        </li>
-    {% endif %}
-</ul>
-
-{% block content %}
-
-{% endblock %}
-
+<div class="container">
+    <ul>
+        <li><a href="{% url 'home' %}">Main</a></li>
+        {% if not user.is_authenticated %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'users.create' %}">Sign up</a></li>
+        {% else %}
+            <li>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <input type="submit" value="Logout">
+                </form>
+            </li>
+        {% endif %}
+    </ul>
+</div>
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
 
 </body>
 </html>
