@@ -1,0 +1,18 @@
+{% extends 'layout/base.html' %}
+
+{% load django_bootstrap5 %}
+{% load i18n %}
+
+{% block content %}
+
+<h1 class="h1">{{ header }}</h1>
+
+<form class="form" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+    {% translate button_text as button_text %}
+    {% bootstrap_button button_text %}
+</form>
+
+{% endblock content %}

@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', include('recipe_manager.recipe_manager.urls')),
+    path('users/', include('recipe_manager.users.urls')),
 ]
